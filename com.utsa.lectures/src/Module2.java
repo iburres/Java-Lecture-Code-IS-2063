@@ -9,6 +9,8 @@
 // An import is package.class  For instance, javax.swing.JOptionPane.  javax.swing is the package
 // and JOptionPane is the class
 
+
+
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 import java.io.*;   //Here we can import all classes associated with the java.io package
@@ -20,8 +22,9 @@ public class Module2 {
     // Class / static variable.  Remember scope
     static String first_name = "Ian";  //You can change this to your name
     static String last_name;
+
     // instance variables.  Can be public or private
-    public String school = "University of Texas at San Antonio";
+    public String school = " ";
     public String major = "Cyber Security";
 
     //another method
@@ -68,18 +71,18 @@ public class Module2 {
                             // notice how + adds the integer values here with the ( ), but
                             // concatenates them without the ( ).
 
-
+        //int result_2 = ((5 * 3)- 5 ) / 2;
         /*
                 GUI's using the javax.swing package
          */
 
        //showMessageDialog is like the print statement, except it creates a GUI
         JOptionPane.showMessageDialog(null, "IS-2063 is the best " +
-                " class ever!");
+                "class ever!");
 
         //showInputDialog provides a message and an input field for the user
         last_name = JOptionPane.showInputDialog(null, "What is your last "
-        + " name? ");
+        + "name? ");
 
         // We can either use STDOUT print our the showMessageDialog for GUI's.
         System.out.println("Hello " + first_name + " " + last_name + ". " + "Welcome to IS-2063!");
