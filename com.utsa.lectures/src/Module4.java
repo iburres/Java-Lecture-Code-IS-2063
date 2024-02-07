@@ -3,6 +3,7 @@
     For loops and File I/O
  */
 
+import javax.swing.*;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ public class Module4 {
             System.out.println("i = " + i);
 
             // Nested for loop
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 15; j++) {
                 System.out.println("j = " + j);
             } // In a nested for loop, the inner loop will run to completion for each iteration of the outer loop
             // For instance, i will be 0, and j will be 0, 1, 2, then i will be 1, and j will be 0, 1, 2, and so on.
@@ -69,20 +70,24 @@ public class Module4 {
 
         // while true loop
         int b = 0;
-        while (true) {
+        boolean h = true;
+        // add start time here
+        while (h) { // replace h with true and test that way.
             System.out.println("b = " + b);
             b++;
             if (b >= 5) {
-                break; // we need to break out of the loop, otherwise it will run forever
+                h = false;//break; // we need to break out of the loop, otherwise it will run forever
             }
         } // The while true loop will run forever, unless we use a break statement to exit the loop. This can be useful
 
         // continue statement
         for (int i = 0; i < 5; i++) {
             if (i == 2) {
+                System.out.println("Hello World");
                 continue; // skip the rest of the loop and go to the next iteration
                 //System.out.println("This will not be printed");  // This will not be printed.  In fact, the compiler
                 // will give an error if this line is uncommented, because it is unreachable code.
+                //System.out.println("Hello World");  This will be unreachable
             }
             System.out.println("i = " + i);
         } // The continue statement will skip the rest of the loop and go to the next iteration. This can be useful for
@@ -159,7 +164,7 @@ public class Module4 {
             System.out.println("Error: " + e.getMessage());
         }
 
-        // open a file using the GUI
+        // open a file using the GUI - Remember, this is how we want to write our programs in this course.
         try {  // java.awt is a package that contains classes for creating GUIs. Desktop is a class that allows you to
             // open files using the default application for that file type.  In this case, we are opening a text file.
             // getDesktop() returns the desktop object, and open() opens the file.
@@ -167,6 +172,38 @@ public class Module4 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+
+        // create a file using the GUI, write to the file, then open the file and its contents using the GUI.
+        try {
+            FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output2.txt");
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            String text = JOptionPane.showInputDialog(null, "Enter some text here: ");
+            printWriter.println(text);
+            printWriter.close();
+            java.awt.Desktop.getDesktop().open(new java.io.File("/Users/burres/Desktop/output2.txt"));
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        // create a file using the GUI and write multiple lines to the file
+        try {
+            FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output3.txt");
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            String text;
+            do { // use a do-while loop to write multiple lines to the file, and allow at least one line to be written
+                text = JOptionPane.showInputDialog(null, "Enter some text here (or press cancel to quit): ");
+                if (text != null) { // if the user presses cancel, text will be null, so we need to check for that
+                    printWriter.println(text);  // We could have used if text == null too.  For instance, if text == null{
+                    // break;  // break out of the loop if the user presses cancel.  This is another way to do it.
+                                    }
+            } while (text != null); // null means the user pressed cancel. If the user did not press cancel, text will
+            // not be null, so the loop will continue to run.
+            printWriter.close();
+            java.awt.Desktop.getDesktop().open(new java.io.File("/Users/burres/Desktop/output3.txt"));
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage()); // e.getMessage() returns a string that describes the error
+        }
+
 
         System.exit(0); // exit the program
     }
