@@ -122,7 +122,8 @@ public class Module4 {
         // generate a random number between 1 and 10
         int random = (int) (Math.random() * 10) + 1; // Math.random() returns a double between 0 and 1
         System.out.println("random = " + random);
-
+        //Math.pow(2, 3); // 2^3 = 8
+        //Math.sqrt(25); // square root of 25 = 5
         /*
             File I/O
             You can use the PrintWriter and FileWriter classes to write to a file, and the Scanner and FileReader classes
