@@ -205,6 +205,20 @@ public class Module4 {
             System.out.println("Error: " + e.getMessage()); // e.getMessage() returns a string that describes the error
         }
 
+        // writing formatted strings to a file
+        try {
+            FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output4.txt");
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            printWriter.printf("Name: %s\n", name); // %s is a placeholder for a string. FileWriter cannot write formatted
+            // strings, so we use PrintWriter to write formatted strings to a file.
+            printWriter.printf("Age: %s\n", age); // %s is a placeholder for a string
+            printWriter.printf("Height: %d\n", height); // %d is a placeholder for an integer
+            printWriter.close();
+            java.awt.Desktop.getDesktop().open(new java.io.File("/Users/burres/Desktop/output4.txt"));
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
 
         System.exit(0); // exit the program
     }
