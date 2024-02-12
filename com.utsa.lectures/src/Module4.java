@@ -204,7 +204,7 @@ public class Module4 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage()); // e.getMessage() returns a string that describes the error
         }
-
+        
         // writing formatted strings to a file
         try {
             FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output4.txt");
