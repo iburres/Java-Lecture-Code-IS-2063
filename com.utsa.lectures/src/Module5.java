@@ -27,7 +27,7 @@ public class Module5 {
                                                       // methods in this class.
     private final int MY_FINAL_VARIABLE = 25;  // This is a final variable. It can only be assigned once. It is common
                                                // to use all capital letters for final variables as they are constants.
-
+    //int new_variable = 5;
 
     // This is the main method that is the entry point to our program. Every class must have a main method and can only
     // have one main method.  This is where the program starts running.  We can call other methods from the main method.
@@ -70,6 +70,7 @@ public class Module5 {
                                       // instance of the class. If we remove the static keyword, we would need to
                                       // create an instance of the class to call this method.
         System.out.println("Hello");
+
     }
 
     // A public method that returns a String.
@@ -80,21 +81,25 @@ public class Module5 {
 
     // A public method that takes a parameter of type integer
     public static void printNumber(int number) {  // we can send a number to the method when we call it.
+
         System.out.println(number);
     }
 
     // A public method that takes two parameters of type double
     public static void printSum(double number1, double number2) {
+
         System.out.println(number1 + number2);
     }
 
     // A public method that takes a parameter of type integer and returns the value multiplied by 2
     public static int multiplyByTwo(int number) {
+        int some_other_number = 0;
         return number * 2;
     }
 
     // create an instance of the class to call this method.
     public void printHello2() {
+
         System.out.println("Hello");
     }
 
