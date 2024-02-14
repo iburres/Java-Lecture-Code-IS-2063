@@ -27,7 +27,7 @@ public class Module5 {
                                                       // methods in this class.
     private final int MY_FINAL_VARIABLE = 25;  // This is a final variable. It can only be assigned once. It is common
                                                // to use all capital letters for final variables as they are constants.
-    //int new_variable = 5;
+    int new_variable = 5;
 
     // This is the main method that is the entry point to our program. Every class must have a main method and can only
     // have one main method.  This is where the program starts running.  We can call other methods from the main method.
@@ -70,6 +70,8 @@ public class Module5 {
                                       // instance of the class. If we remove the static keyword, we would need to
                                       // create an instance of the class to call this method.
         System.out.println("Hello");
+
+
 
     }
 
@@ -159,7 +161,15 @@ class Module5_2 {
     public void printHello2() {  // printHello2 is never called from this class, but it is public, so it can be called
                                  // from another class. This is just to show that it is possible to call a public method.
         Module5 myModule5 = new Module5();
-        myModule5.printHello2();
+        myModule5.printHello2(); // printHello2 does not have the static keyword, so we need to create an instance of
+                                 // the class to call it.
+
+        Module5.printSum(5.5, 6.5);  // We can call the public method from the other class, since it is public.
+
+
+        Module5.printNumber(5);  // Because the method uses the static keyword, we can call it from the other class using
+                                    // the class name followed by a dot and the method name. If it did not use static, we would
+                                    // need to create an instance of the class to call the method.
     }
 }
 
