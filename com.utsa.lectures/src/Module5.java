@@ -18,6 +18,8 @@
 // private keyword is an access modifier that makes the method private, meaning it can only be called from within the class.
 // private also applies to variables.  If a variable is private, it can only be used by methods in the same class.
 
+import javax.swing.*;
+
 public class Module5 {
     // It is best practice to declare all static variables at the top of the class, just after the class declaration.
     static int myStaticVariable = 5;  // This is a static variable. It can be used by all methods in the class.
@@ -59,7 +61,14 @@ public class Module5 {
         // shown below.
          myModule5.printHello3();  // This will give us an error.
 
+        // Calling the method from Module5_2, which is public but does not have the static keyword. This means we need
+        // to create an instance of the class to call the method.
+        Module5_2 myModule5_2 = new Module5_2();
+        myModule5_2.callMethods();
 
+        // How to call the main method from Module5_2
+        Module5_2.main(args);  // This is how we call the main method from another class.  We use the class name
+                               // followed by a dot and the method name.
 
 
 
@@ -133,10 +142,10 @@ public class Module5 {
     }
 
     // If you want to share the local variable with other methods, you can declare it as a static variable like this:
-    static int y = 40;  // y is a static variable. It can be used by all methods in the class.
+    static int yowdy = 40;  // y is a static variable. It can be used by all methods in the class.
 
     public void myOtherMethod() {
-        System.out.println(y); // notice here that we can use the static variable y in this method.
+        System.out.println(yowdy); // notice here that we can use the static variable y in this method.
     }
 
     // You should usually declare static variables just after the class declaration, since it can be used by all methods:
@@ -148,17 +157,27 @@ public class Module5 {
 // that it is possible to have more than one class in a file. We will visit this topic next week, in Module 6 and 8.
 class Module5_2 {
 
+    // Module5 myModule5 = new Module5();
+    // myModule5.yowdy = 4; // This will give us an error because yowdy is a static variable.
+    // Module5.yowdy = 4; // We cannot do this either, since the variable is not public.
+
     // Because this is another class, we can have another main method.  This is not the entry point to the program though.
     // since that is in the Module5 class.
     public static void main(String[] args) {
-        Module5 myModule5 = new Module5();
+        // Module5 myModule5 = new Module5();
         // myModule5.printHello3();  // This will give us an error because we cannot call a private method from outside
                                     // the class. module5_2 is outside the class since it is a different class.
+
+        JOptionPane.showMessageDialog(null, "We just called the main method from public class" +
+                " Module5");
+
+        // Exit the program when the user clicks "OK" or hits Enter.
+        System.exit(0);
 
     }
 
     // We can call the public methods from the other class, since they are public.
-    public void printHello2() {  // printHello2 is never called from this class, but it is public, so it can be called
+    public void callMethods() {  // callMethods is never called from this class, but it is public, so it can be called
                                  // from another class. This is just to show that it is possible to call a public method.
         Module5 myModule5 = new Module5();
         myModule5.printHello2(); // printHello2 does not have the static keyword, so we need to create an instance of
@@ -170,6 +189,7 @@ class Module5_2 {
         Module5.printNumber(5);  // Because the method uses the static keyword, we can call it from the other class using
                                     // the class name followed by a dot and the method name. If it did not use static, we would
                                     // need to create an instance of the class to call the method.
+        myModule5.printNumber(5);
     }
 }
 
