@@ -153,7 +153,12 @@ class Car {
     }
 }
 
-// We will use this class to create Truck objects during class lecture.
+// Let's build the truck class using proper OOP principles. We will use non-static fields and methods.  We will also
+// use the "this" keyword to refer to the object's fields, and we will use the "new" keyword to create objects of the
+// class. We can experiment with the public and private access modifiers to see how they work in the context of OOP.
+// Finally, remember to use setters and getters to access private fields. This is the "correct" way to access private
+// fields, since we do not want to access them directly. We want to use methods to access them. This is often referred to
+// as encapsulation.
 class Truck {
     // Class body
     private void truckStart() {
