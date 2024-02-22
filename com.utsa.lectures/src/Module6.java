@@ -106,6 +106,20 @@ class Car {
         // field/attribute.
 
         this.vin = "000000000";
+        //vin = "111111111";
+    }
+
+    // Here is a second constructor, except this one takes parameters. This is called a parameterized constructor. We
+    // can have more than one constructor in a class. This is called constructor overloading; however, the constructors
+    // must have different parameters.
+
+    Car(String newColor, int newSpeed, String newMake, String newModel, boolean newIsOn, String newVin) {
+        color = newColor;
+        speed = newSpeed;
+        make = newMake;
+        model = newModel;
+        isOn = newIsOn;
+        vin = newVin;
     }
 
     // This is not a static method. It is an instance method. It belongs to the object and not to the class. This is
@@ -160,7 +174,7 @@ class Car {
 // fields, since we do not want to access them directly. We want to use methods to access them. This is often referred to
 // as encapsulation.
 class Truck {
-    // Class body
+
     private void truckStart() {
         // Method body
     }
