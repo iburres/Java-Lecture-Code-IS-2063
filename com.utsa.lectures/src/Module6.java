@@ -15,12 +15,14 @@ public class Module6 { // The public class name must match the file name. We can
 
         // We can use the printHello method from Module5 class
         // Module5.printHello();
-        Menu.displayMenu();
-        System.exit(0);
+        //Menu.displayMenu();
+        //System.exit(0);
 
-
+        Truck myTruck = new Truck("red", 0, "Ford", "F-150", 6.5, 10000, 2.5, "crew", "000000000");
+        myTruck.setTruckSpeed();
     }
 }
+
 
 class Menu {
     // Class body
@@ -69,6 +71,7 @@ class Menu {
         // variables.
 
 
+
     }
 }
 
@@ -95,7 +98,7 @@ class Car {
     public Car() {
         // This is the default constructor. It is called when the new keyword is used to create an object of the class.
         // It is used to initialize the object's fields. It has the same name as the class and no return type.
-        color = "red";
+        String color;
         speed = 0;
         make = "Toyota";
         model = "Camry";
@@ -114,6 +117,7 @@ class Car {
     // must have different parameters.
 
     Car(String newColor, int newSpeed, String newMake, String newModel, boolean newIsOn, String newVin) {
+        newColor = "red";
         color = newColor;
         speed = newSpeed;
         make = newMake;
@@ -173,9 +177,52 @@ class Car {
 // Finally, remember to use setters and getters to access private fields. This is the "correct" way to access private
 // fields, since we do not want to access them directly. We want to use methods to access them. This is often referred to
 // as encapsulation.
-class Truck {
 
-    private void truckStart() {
-        // Method body
+
+
+class Truck {
+    // Create the fields of the truck class
+    public String color;
+    public int speed;
+    public String make;
+    public String model;
+    public double bedLenght;
+    public double towingCapacity;
+    public double weightInTons;
+    public String cabSize;
+    private String vin;
+
+
+    public Truck(String newColor, int newSpeed, String newMake, String newModel, double newBedLength,
+                 double newTowingCapacity, double newWeightInTons, String newCabSize, String newVin) {
+        // This is the constructor method. It is used to create objects of the class. It is called when the new keyword
+        // is used to create an object. It is used to initialize the object's fields. It has the same name as the class
+        // and no return type.
+        color = newColor;
+        speed = newSpeed;
+        make = newMake;
+        model = newModel;
+        bedLenght = newBedLength;
+        towingCapacity = newTowingCapacity;
+        weightInTons = newWeightInTons;
+        cabSize = newCabSize;
+        vin = newVin;
+    }
+
+
+
+    //Truck myTruck = new Truck("red", 0, "Ford", "F-150", 6.5, 10000, 2.5, "crew", "000000000");
+    //Truck yourTruck = new Truck("blue", 100, "Chevy", "Silverado", 6.5, 10000, 2.5, "crew", "111111111");
+
+    // Create a truck object and set its speed by calling the setTruckSpeed method
+
+    public void setTruckSpeed() {
+       int truck_speed = Integer.parseInt(JOptionPane.showInputDialog("Enter the speed of the truck: "));
+
+    }
+
+
+    public void getTruckSpeed() {
+        JOptionPane.showMessageDialog(null, "The truck's speed is " + speed);
     }
 }
