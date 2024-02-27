@@ -39,12 +39,27 @@ public class Module6B {
     // approach, when you want to create a new instance of the object, with the fields already populated. Then, you
     // set the value using a setter approach, when you want to change the value of a field, after the object has been
     // created.
+
+    // paramaterized constructor
     public Module6B(String name) {
+
         this.name = name; // Use the "this" keyword to refer to the current object.
     }
 
-    // Create setter and getter methods for each field.
+    // default constructor
 
+    // no-arg constructor
+    public Module6B() {
+        this.name = "Billy Jean";
+        this.age = 30;
+        this.jobTitle = "Not his lover";
+        this.address = "Born in the USA";
+        this.phoneNumber = "867-5309";
+        this.email = "billy.jean@rcarecords.com";
+        this.salary = 300000000.00; // I am not sure if this is accurate, but it is a lot of money.
+    }
+
+    // Create setter and getter methods for each field.
     public void setName(String name) {
         this.name = name; // Use the "this" keyword to refer to the current object so that we de not confuse which
         // "name" we are referring to.
@@ -105,6 +120,12 @@ public class Module6B {
 
     public static void main(String[] args) {
 
+        //using the no-arg constructor
+        Module6B person2 = new Module6B();
+        JOptionPane.showMessageDialog(null, "Name: " + person2.getName() + "\nAge: " + person2.getAge() +
+                "\nJob Title: " + person2.getJobTitle() + "\nAddress: " + person2.getAddress() + "\nPhone Number: " +
+                person2.getPhoneNumber() + "\nEmail: " + person2.getEmail() + "\nSalary: " + person2.getSalary());
+
         // Because we have a constructor that takes a name, we must pass a name when creating an object of the class.
         // We technically will not be using the setName method because we are passing the name to the constructor.
         Module6B person = new Module6B("John Doe");
@@ -124,8 +145,14 @@ public class Module6B {
                 person.getPhoneNumber() + "\nEmail: " + person.getEmail() + "\nSalary: " + person.getSalary());
 
 
-        // What if we want to change the name? We can use the setName method.
+        // What if we want to change some attribute after the object has been constructed? We can use the setter methods.
         person.setName("Tiny Tim");
+        person.setAge(11);
+        person.setJobTitle("disabled child");
+        person.setAddress("Charles Dickens' house");
+        person.setPhoneNumber("Phone's not invented yet");
+        person.setEmail("no such thing as email");
+        person.setSalary(0.00); // he was poor, after all.
         JOptionPane.showMessageDialog(null, "Name: " + person.getName() + "\nAge: " + person.getAge() +
                 "\nJob Title: " + person.getJobTitle() + "\nAddress: " + person.getAddress() + "\nPhone Number: " +
                 person.getPhoneNumber() + "\nEmail: " + person.getEmail() + "\nSalary: " + person.getSalary());
