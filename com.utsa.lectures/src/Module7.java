@@ -1,7 +1,7 @@
 /*
     * Module 7: Java Arrays and the ArrayList Class
     *
-    * For here on out we will be using the best practice suggestions I gave you in Module6B when writing your code.
+    *
  */
 
 import java.util.ArrayList;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Module7 {
 
     public static void main(String[] args) {
+        int[] result;
 
         createArrays();  // Remember, if the createArrays method is not static, you will need to create an instance of
         // the class to call the method.
@@ -20,7 +21,13 @@ public class Module7 {
         findIndexInString();
         twoDimensionalArray();
         sendArrayToMethod();
+
+        result = returnArray();
+        for (int i = 0; i < result.length; i++) {
+            System.out.println("\nElement " + i + ", in the returnArray has a value of:  " + result[i]);
+        }
         areArraysEqual();
+        arrayList();
 
     }
 
@@ -41,12 +48,16 @@ public class Module7 {
         myCharArray[0] = 'H'; // This is the first element in the array
         myCharArray[1] = 'e'; // This is the second element in the array, etc....
 
+        char[] newCharArray = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'}; // This is another way to create an array
+
         // We can use loops to fill the array with values
         int[] myNewArray = new int[10];
+        int j = 0;
         for (int i = 0; i < myNewArray.length; i++) {
-            myNewArray[i] = i; // the [] is the operator that gives us the value at the index located at i. So,
+            myNewArray[i] = j; // the [] is the operator that gives us the value at the index located at i. So,
             // the first time through the loop, i = 0, so myNewArray[0] = 0. The second time through the loop, i = 1,
             // so myNewArray[1] = 1, etc...
+            j += 4;
         }
         // Now we can loop through the array and print out the values
         for (int i = 0; i < myNewArray.length; i++) {
@@ -215,6 +226,17 @@ public class Module7 {
         }
     }
 
+    // how to return an array from a method
+    public static int[] returnArray() {
+        int[] myIntArray = new int[5];
+        myIntArray[0] = 90;
+        myIntArray[1] = 27;
+        myIntArray[2] = 30;
+        myIntArray[3] = 15;
+        myIntArray[4] = 75;
+        return myIntArray;
+    }
+
     // determining if two arrays are equal. The book gives you a convoluted way to do this, but we can use the equals
     // method from the Arrays class in the java.util package to do the same thing.
     public static void areArraysEqual() {
@@ -236,11 +258,127 @@ public class Module7 {
         System.out.println("\nAre the two arrays equal? " + result);
     }
 
-    // On Thursday, we will cover the ArrayList class in more detail, which is a dynamic array that can grow in size
-    // and is part of the java.util package.  We will also look at finding the sum of the elements in an array and
-    // finding the highest and lowest values, as well as the average of the elements in an array. Finally,
-    // we will look at returning arrays from methods and how to search for elements (including some of the
-    // algorithms that are used to do this).
+    /*
+    *                                           The ArrayList Class
+    *
+    * // This table should help you remember the methods that are used with the ArrayList class:
+        // Method          | Description
+        // add             | Adds an element to the ArrayList
+        // remove          | Removes an element from the ArrayList
+        // set            | Changes the value of an element in the ArrayList
+        // get            | Returns the value of an element in the ArrayList
+        // size           | Returns the number of elements in the ArrayList
+        // indexOf        | Returns the index of the first occurrence of the element specified in the ArrayList
+        // clear          | Removes all the elements from the ArrayList
+        // isEmpty        | Returns true if the ArrayList is empty, otherwise returns false
+        // contains       | Returns true if the ArrayList contains the element specified, otherwise returns false
+        // toArray        | Returns an array containing all the elements in the ArrayList
+        // addAll         | Adds all the elements in the ArrayList specified to the end of the ArrayList
+        // removeAll      | Removes all the elements in the ArrayList specified from the ArrayList
+        // retainAll      | Removes all the elements in the ArrayList that are not in the ArrayList specified
+        // subList        | Returns a view of the portion of the ArrayList between the specified indexes
+        // equals         | Returns true if the ArrayList is equal to the ArrayList specified, otherwise returns false
+        // hashCode       | Returns the hash code value for the ArrayList.  [This is not really covered in the book]
+     */
+
+    // using the ArrayList class to create a dynamic array
+    public static void arrayList() {
+
+        // Create a Header for the ArrayList section
+          System.out.println("\n\n\t\tArrayList Class\n\n");
+
+
+        ArrayList<String> myArrayList = new ArrayList<String>(); // This is actually an object. In fact, remember that
+        // strings are objects in Java, not primitive data types.
+        myArrayList.add("Hello"); // This is the first element in the ArrayList
+        myArrayList.add("World"); // This is the second element in the ArrayList
+        myArrayList.add("Java"); // This is the third element in the ArrayList
+        myArrayList.add("Programming"); // This is the fourth element in the ArrayList
+        myArrayList.add("Language"); // This is the fifth element in the ArrayList
+
+        // We can use loops to fill the ArrayList with values
+        for (int i = 0; i < 5; i++) {
+            myArrayList.add("Element " + i);
+        }
+
+        // Now we can loop through the ArrayList and print out the values
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println("Element " + i + ", value is " + myArrayList.get(i));
+        }
+
+        // We can also use the add method to add an element at a specific index
+        myArrayList.add(2, "Java"); // This will add the element "Java" at index 2.  This will shift the
+        // elements at index 2 and above to the right.
+
+        // Now we can loop through the ArrayList and print out the values
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println("Element " + i + ", value is " + myArrayList.get(i));
+        }
+
+        // We can use the remove method to remove an element from the ArrayList
+        myArrayList.remove(2); // This will remove the element at index 2. This will shift the elements at index
+        // 3 and above to the left.  For instance, if we remove the element at index 2, the element at index 3 will
+        // move to index 2, the element at index 4 will move to index 3, etc...
+
+        // Now we can loop through the ArrayList and print out the values
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println("Element " + i + ", value is " + myArrayList.get(i));
+        }
+
+        // We can use the set method to change the value of an element in the ArrayList
+        myArrayList.set(2, "Java"); // This will change the value of the element at index 2 to "Java"
+
+        // Now we can loop through the ArrayList and print out the values
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println("Element " + i + ", value is " + myArrayList.get(i));
+        }
+
+        // get the number of elements in the ArrayList
+        System.out.println("The number of elements in the ArrayList is " + myArrayList.size()); // .size() is a method
+        // that returns the number of elements in the ArrayList.
+
+        // get the value of an element in the ArrayList
+        System.out.println("The value of the element at index 2 is " + myArrayList.get(2)); // .get() is a method that
+        // returns the value of the element at the index specified.
+
+        // find the index of an element in the ArrayList
+        System.out.println("The index of the element with the value of Java is " + myArrayList.indexOf("Java")); // .indexOf()
+        // is a method that returns the index of the first occurrence of the element specified.
+
+        // remove all the elements from the ArrayList
+        myArrayList.clear();
+
+        // check if the ArrayList is empty
+        System.out.println("Is the ArrayList empty? " + myArrayList.isEmpty()); // I would place this in an if statement
+
+        // check if the ArrayList contains an element
+        System.out.println("Does the ArrayList contain the element Java? " +
+                myArrayList.contains("Java")); // I would also place this in an if statement
+
+
+        // create an array of type Integer using the ArrayList
+        ArrayList<Integer> myArrayList2 = new ArrayList<Integer>(); // notice I do not need to set the size of the
+        // ArrayList.  This is because the ArrayList is dynamic, so it will grow as needed.
+
+        // add elements to the ArrayList
+        myArrayList2.add(1);
+        myArrayList2.add(2);
+
+        // convert the ArrayList to an array
+        Integer[] myArray = myArrayList2.toArray(new Integer[myArrayList2.size()]); // the toArray method returns an
+        // array containing all the elements in the ArrayList.  An array is not an object. It is a data structure that
+        // holds a fixed number of values of a single type.
+
+        // now we can loop through the array and print out the values
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println("Element " + i + ", value is " + myArray[i]);
+        }
+
+
+
+
+    }
+
 }
 
 

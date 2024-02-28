@@ -120,15 +120,16 @@ public class Module6B {
 
     public static void main(String[] args) {
 
+        // Because we have a constructor that takes a name, we must pass a name when creating an object of the class.
+        // We technically will not be using the setName method because we are passing the name to the constructor.
+        Module6B person = new Module6B("John Doe");
+
         //using the no-arg constructor
         Module6B person2 = new Module6B();
         JOptionPane.showMessageDialog(null, "Name: " + person2.getName() + "\nAge: " + person2.getAge() +
                 "\nJob Title: " + person2.getJobTitle() + "\nAddress: " + person2.getAddress() + "\nPhone Number: " +
                 person2.getPhoneNumber() + "\nEmail: " + person2.getEmail() + "\nSalary: " + person2.getSalary());
 
-        // Because we have a constructor that takes a name, we must pass a name when creating an object of the class.
-        // We technically will not be using the setName method because we are passing the name to the constructor.
-        Module6B person = new Module6B("John Doe");
 
         // Because the other fields are private, and they are not initialized in the constructor, we must use the
         // setter methods to set their values and the getter methods to return them.
