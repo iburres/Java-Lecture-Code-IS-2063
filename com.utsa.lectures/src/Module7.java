@@ -258,6 +258,28 @@ public class Module7 {
         System.out.println("\nAre the two arrays equal? " + result);
     }
 
+    // sorting an array of integers.  This requires the use of some algorithms, like bubble sort, selection sort,
+    // insertion sort, bucket sort, etc...  Let's see how to do this using bubble sort, which is the simplest way to
+    // sort an array but needs a swap method to work.
+
+public static void bubbleSort(int[] array) {
+        int n = array.length;
+        int temp = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < (n - i); j++) {
+                if (array[j - 1] > array[j]) {
+                    // swap elements below. Remember my example using the three cups?
+                    temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+    }
+
+    // Thankfully, we can use the sort method from the Arrays class in the java.util package to sort an array of integers.
+    // which you will see below, in the ArrayList section.
+
     /*
     *                                           The ArrayList Class
     *
@@ -278,6 +300,7 @@ public class Module7 {
         // retainAll      | Removes all the elements in the ArrayList that are not in the ArrayList specified
         // subList        | Returns a view of the portion of the ArrayList between the specified indexes
         // equals         | Returns true if the ArrayList is equal to the ArrayList specified, otherwise returns false
+        // sort           | Sorts the elements in the ArrayList
         // hashCode       | Returns the hash code value for the ArrayList.  [This is not really covered in the book]
      */
 
@@ -361,8 +384,11 @@ public class Module7 {
         // ArrayList.  This is because the ArrayList is dynamic, so it will grow as needed.
 
         // add elements to the ArrayList
-        myArrayList2.add(1);
-        myArrayList2.add(2);
+        myArrayList2.add(6);
+        myArrayList2.add(-2);
+        myArrayList2.add(5);
+        myArrayList2.add(3);
+        myArrayList2.add(7);
 
         // convert the ArrayList to an array
         Integer[] myArray = myArrayList2.toArray(new Integer[myArrayList2.size()]); // the toArray method returns an
@@ -374,7 +400,14 @@ public class Module7 {
             System.out.println("Element " + i + ", value is " + myArray[i]);
         }
 
+        // sort the elements in the ArrayList
+        java.util.Collections.sort(myArrayList2);
+        System.out.println("\n\nAfter sorting the ArrayList: " + myArrayList2); // the sort method from the Collections
 
+        // loop through the ArrayList and print out the values
+        for (int i = 0; i < myArrayList2.size(); i++) {
+            System.out.println("Element " + i + ", value is " + myArrayList2.get(i));
+        }
 
 
     }
