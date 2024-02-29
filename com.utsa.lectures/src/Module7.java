@@ -127,6 +127,23 @@ public class Module7 {
 
         // You code with me:  How would we access the 5th element of an array with 11 elements?
         int[] students = new int[11];
+        students[0] = 5;
+        students[1] = -2;
+        students[2] = 15;
+        students[3] = 5;
+        students[4] = -12;
+        students[5] = 155;
+        students[6] = 50;
+        students[7] = -22;
+        students[8] = -15;
+
+        for(int i = 0; i < students.length; i++) {
+
+            System.out.println("Student assisted CODE!!!!!!:"   + students[i]);
+        }
+
+        int[] people = {1, 2};
+        System.out.println(people[1]);
 
     }
 
@@ -136,7 +153,7 @@ public class Module7 {
         myIntArray[0] = 90;
         myIntArray[1] = 27;
         myIntArray[2] = 30;
-        myIntArray[3] = 15;
+        myIntArray[3] = 30;
         myIntArray[4] = 75;
 
         for (int i = 0; i < myIntArray.length; i++) {
@@ -263,6 +280,12 @@ public class Module7 {
     // sort an array but needs a swap method to work.
 
 public static void bubbleSort(int[] array) {
+
+        // {1, 0, 5, 2}
+    v   // {0, 1, 5, 2}
+        // {0, 1, 2, 5}
+
+
         int n = array.length;
         int temp = 0;
         for (int i = 0; i < n; i++) {
@@ -349,7 +372,7 @@ public static void bubbleSort(int[] array) {
         }
 
         // We can use the set method to change the value of an element in the ArrayList
-        myArrayList.set(2, "Java"); // This will change the value of the element at index 2 to "Java"
+        myArrayList.set(2, "Python"); // This will change the value of the element at index 2 to "Java"
 
         // Now we can loop through the ArrayList and print out the values
         for (int i = 0; i < myArrayList.size(); i++) {
