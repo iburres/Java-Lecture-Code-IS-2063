@@ -282,7 +282,7 @@ public class Module7 {
 public static void bubbleSort(int[] array) {
 
         // {1, 0, 5, 2}
-    v   // {0, 1, 5, 2}
+       // {0, 1, 5, 2}
         // {0, 1, 2, 5}
 
 
