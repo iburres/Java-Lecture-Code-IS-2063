@@ -8,25 +8,47 @@
             - The equals method
             - Making copies of objects
             - The copy constructor
+               - The clone method
             - The no-argument constructor
+            - Aggregation
+            - The "this" keyword
+            - Enumerated types
+            - Compiling and sharing your programs as JAR files
+
+            NOTE: The book describes a key use of the "this" keyword as a means to overcome shadowing, which is when a
+            field name is the same as a parameter name.  You can also use this to call one constructor from another.
+
+            Note2: Security issues with Aggregation:  Perform deep copies when creating field objects and return copies
+            of field objects, not the original field objects.  This is to prevent the field objects from being modified.
+
+
 
  */
 
 public class Module8 {
 
+    // Example of object Aggregation.  We are creating an instance of the Module6B class as a field of the Module8 class.
+    private Module6B module;  // this uses the "has a" relationship, so we can say that the Module8 class "has a" module.
+
     // creating a field
     private int x;
     private int y;
 
+
     // I will explain why I have two constructors during the lecture
     public Module8(int x, int y) {
-        this.x = x;
+        this.x = x; // this refers to the field x and is available to all non-static methods
         this.y = y;
     }
 
     public Module8() {
         x = 0;
         y = 0;
+    }
+
+    // Constructor that demonstrates the use of the "this" keyword to call another constructor
+    public Module8(int x) {
+        this(x, 0);
     }
 
     // Copy Constructor
@@ -102,8 +124,9 @@ public class Module8 {
     }
 
     // toString method
+    @Override
     public String toString() {
-        return "The value of x is: " + x;
+        return "The value of x is: " + x + y;
     }
 
     // If we write the equals method, we will be overriding the equals method of the Object class, just as we
@@ -126,6 +149,15 @@ public class Module8 {
 
         return copyObject;
     }
+
+    @Override
+    // The clone method.  This method is part of the Object class, and it is used to create a copy of an object, so we
+    // will have to override it.
+    public Object clone() {
+        Module8 copyObject = new Module8(x, y);
+        return copyObject;
+    }
+
 
     // Setter or mutator method for the x field
     public void setX(int x) {
