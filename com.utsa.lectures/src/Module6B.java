@@ -41,9 +41,10 @@ public class Module6B {
     // created.
 
     // paramaterized constructor
-    public Module6B(String name) {
+    public Module6B(String name, int age) {
 
         this.name = name; // Use the "this" keyword to refer to the current object.
+        age = age;
     }
 
     // default constructor

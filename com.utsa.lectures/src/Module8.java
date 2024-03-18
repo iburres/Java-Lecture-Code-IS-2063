@@ -29,6 +29,8 @@ public class Module8 {
 
     // Example of object Aggregation.  We are creating an instance of the Module6B class as a field of the Module8 class.
     private Module6B module;  // this uses the "has a" relationship, so we can say that the Module8 class "has a" module.
+    enum Days {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY}
+    enum Cards {Hearts, Clubs, Spades, Diamonds}
 
     // creating a field
     private int x;
@@ -43,13 +45,16 @@ public class Module8 {
 
     public Module8() {
         x = 0;
-        y = 0;
+        //y = 0;
     }
 
     // Constructor that demonstrates the use of the "this" keyword to call another constructor
     public Module8(int x) {
+
         this(x, 0);
     }
+
+
 
     // Copy Constructor
     public Module8(Module8 newModule) {
@@ -61,6 +66,7 @@ public class Module8 {
 
         // Passing objects as arguments to methods
         Module8 mymodule = new Module8();
+        Module8 module99 = new Module8(2, 4);
 
         // set the x field of the mymodule object to 5
         mymodule.setX(5);
