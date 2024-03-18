@@ -60,6 +60,9 @@ public class Module6B {
         this.salary = 300000000.00; // I am not sure if this is accurate, but it is a lot of money.
     }
 
+    public Module6B(String johnDoe) {
+    }
+
     // Create setter and getter methods for each field.
     public void setName(String name) {
         this.name = name; // Use the "this" keyword to refer to the current object so that we de not confuse which
