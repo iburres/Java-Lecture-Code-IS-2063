@@ -51,6 +51,7 @@ public class Module9 {
         lastIndexOf();
         length();
         charAt();
+        stringBuilderAndBuffer();
 
 
     }
@@ -292,5 +293,27 @@ public class Module9 {
         }
         System.out.println(count); // 2
     }
+
+    // StringBuilder and StringBuffer are used to create mutable (modifiable) strings.
+    public static void stringBuilderAndBuffer(){
+        System.out.println("\n  *******  StringBuilder and StringBuffer:  *******");
+
+        // StringBuilder is not thread safe, which means it is not synchronized.  It is faster than StringBuffer.
+        // If you are working in a single-threaded environment, you should use StringBuilder.  If you are working in a
+        // multi-threaded environment, you should use StringBuffer.
+        StringBuilder sb = new StringBuilder("Hello");
+        sb.append(" World"); // append method is used to add text to the end of a string
+        System.out.println(sb); // Hello World
+
+        // StringBuffer is thread safe, which means it is synchronized.  It is slower than StringBuilder.
+        StringBuffer sbf = new StringBuffer("Hello");
+        sbf.append(" World");
+        System.out.println(sbf); // Hello World
+
+        // insert method is used to add text at a specified index
+        sb.insert(5, ","); // insert a comma at index 5
+        System.out.println(sb); // Hello, World
+    }
+
 
 }
