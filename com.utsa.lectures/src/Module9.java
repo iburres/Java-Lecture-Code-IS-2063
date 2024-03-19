@@ -28,6 +28,11 @@
         - concat Method
         - valueOf Method
         - toString Method
+
+        primitive data types: byte, short, int, long, float, double, char, boolean
+        wrapper class types: Byte, Short, Integer, Long, Float, Double, Character, Boolean
+        Some Wrapper Classes: Number, Math, Random, Date, Calendar, String, StringBuffer, StringBuilder, Character,
+
  */
 
 public class Module9 {
@@ -314,6 +319,5 @@ public class Module9 {
         sb.insert(5, ","); // insert a comma at index 5
         System.out.println(sb); // Hello, World
     }
-
 
 }

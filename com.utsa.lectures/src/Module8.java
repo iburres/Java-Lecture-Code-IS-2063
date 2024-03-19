@@ -30,7 +30,12 @@ public class Module8 {
     // Example of object Aggregation.  We are creating an instance of the Module6B class as a field of the Module8 class.
     private Module6B module;  // this uses the "has a" relationship, so we can say that the Module8 class "has a" module.
     enum Days {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY}
-    enum Cards {Hearts, Clubs, Spades, Diamonds}
+
+    // Enumerated types.  Playing cards with suits and ranks.
+    enum Suits {Hearts, Diamonds, Clubs, Spades}
+    enum Ranks {Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
+
+
 
     // creating a field
     private int x;
@@ -108,6 +113,16 @@ public class Module8 {
         Module8 newModule5 = new Module8(newModule4);
         // compare copy and original
         System.out.println(newModule2.equals(newModule5)); // prints true
+
+        // creating a card object
+        Suits card = Suits.Hearts;
+        System.out.println(card); // prints Hearts
+
+        // Making a 10 of Hearts card
+        Suits card2 = Suits.Hearts;
+        Ranks rank = Ranks.Ten;
+        System.out.println(rank + " of " + card2); // prints Ten of Hearts
+
 
     }
 
