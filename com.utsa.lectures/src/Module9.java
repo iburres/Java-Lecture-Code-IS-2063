@@ -71,6 +71,7 @@ public class Module9 {
         // Autoboxing, converting a primitive data type into an object
         int i = 10;
         Integer iObj = Integer.valueOf(i); // converting int to Integer explicitly
+        // Integer newInt = new Integer(10); Deprecated
         Integer iObj2 = i; // converting int to Integer implicitly
         System.out.println("iObj " + iObj + " is now the same as iObj2: " + iObj2);
 
@@ -207,7 +208,7 @@ public class Module9 {
         System.out.println("\n  *******  substring Method:  *******");
 
         String s1 = "Tiger, Meows";
-        System.out.println(s1.substring(7)); // World
+        System.out.println(s1.substring(7)); // Meows
         System.out.println(s1.substring(0, 5)); // Change the 5 to 6 and see what happens
     }
 
@@ -239,6 +240,7 @@ public class Module9 {
 
         System.out.println(s1.regionMatches(true, 0, "hello", 0, 3)); // true
         System.out.println(s1.regionMatches(true, 0, "world", 0, 5)); // false
+        System.out.println(s1.regionMatches(0, "Hello", 0, 6));//false
         // change the toffset to 7 and see what happens.
     }
 
