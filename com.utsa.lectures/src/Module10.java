@@ -10,7 +10,7 @@
         - The Object class
         - Polymorphism
 
-        - Abstract classes and Anstract methods
+        - Abstract classes and Abstract methods
         - Interfaces
         - Anonymous inner classes
         - Functional interfaces and Lambda expressions
@@ -162,6 +162,11 @@ class Module10_2 extends Module10_1 {
         super(10, 2); // This will call the superclass constructor with 10 questions and 2 missed
     }
 
+    public Module10_2(int questions, int missed, double pointsEach) {
+        super(questions, missed); // This will call the superclass constructor with 10 questions and 2 missed
+        this.pointsEach = pointsEach;
+    }
+
     // NOTE: If the superclass constructor is not default or no-arg, then you must call it explicitly with the super
     // keyword, or you will get a compilation error.
 
@@ -191,7 +196,7 @@ class Module10_3  {
 
 // Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP is when a
 // superclass reference variable can reference objects of a subclass.
-class Module10_4 {
+class Module10_4{
 
 
     public static void main(String[] args) {
