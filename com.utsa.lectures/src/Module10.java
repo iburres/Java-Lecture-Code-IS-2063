@@ -58,6 +58,12 @@ public class Module10 {
         }
         */
 
+        // creating an object from the implementing class
+        Module10_7 obj = new Module10_7();
+        obj.doSomething();
+        obj.doSomethingElse();
+        System.out.println("This is the end of the program");
+
 
         System.exit(0);
 
@@ -117,7 +123,7 @@ class Module10_1 extends Module10_0{
         numMissed = missed;
 
         pointsEach = 100.0 / questions;
-        numericScore = 100.0 - (missed * pointsEach);
+        numericScore = numQuestions - (missed * pointsEach);
 
         myScore = 10.0; // Because myScore is protected, it can be accessed by the subclass
 
@@ -125,7 +131,7 @@ class Module10_1 extends Module10_0{
     }
 
     public double getPointsEach() {
-        myScore = 20.0; // This will change the value of myScore in the superclass
+        //myScore = 20.0; // This will change the value of myScore in the superclass
         return pointsEach;
     }
 
@@ -138,7 +144,7 @@ class Module10_1 extends Module10_0{
     public void setScore(double s) {
 
         rawScore = s;
-        super.setScore(rawScore * 0.6);
+        super.setScore(rawScore);
     }
 
 
@@ -215,3 +221,62 @@ class Module10_4{
     }
 
 }
+
+// An abstract class is a class that is declared abstract —it may or may not include abstract methods.
+// Abstract classes cannot be instantiated, but they can be subclassed. When an abstract class is subclassed, the
+// subclass usually provides implementations for all the abstract methods in its parent class. - Oracle
+
+// The abstract keyword is a non-access modifier, used for classes and methods:
+abstract class Module10_5 extends Module10_0{
+
+    // You cannot create objects with abstract classes.
+
+    // To access this abstract class, it must be inherited by another class.
+
+    public abstract void doSomething(); // This is an abstract method.  Notice it does not have a body.
+
+    public void doSomethingElse() {
+        System.out.println("This is a concrete method");  // This is a regular method.
+    }
+
+    // implementing the abstract method from the superclass
+    @Override
+    public void setScore(double s) {
+        super.setScore(s);
+    }
+
+// NOTE:  For additional information and a good example, visit this link: https://www.w3schools.com/java/java_abstract.asp
+
+}
+
+// An interface is used to group related methods with empty bodies.  It is a blueprint of a class.
+interface Module10_6 {
+
+    public void doSomething(); // This is an abstract method, so it does not have a body
+
+    public void doSomethingElse(); // This is an abstract method, so it does not have a body
+
+}
+
+// Now we can implement the interface in a class
+class Module10_7 implements Module10_6 {  // Notice the "implements" keyword
+
+
+    public void doSomething() {
+        System.out.println("This is the doSomething method"); // Here
+    }
+
+
+    public void doSomethingElse() {
+        System.out.println("This is the doSomethingElse method");
+    }
+
+    //NOTE:  For additional information and a good example, visit this link: https://www.w3schools.com/java/java_interface.asp
+
+}
+
+
+
+
+
+
