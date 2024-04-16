@@ -202,7 +202,7 @@ public class Module11 {
         //for example: the file pointer will start at 0, then move to 4 (which is the 5th byte in the file), then move
         // to 8, then move to 12, and so on, if all the items in the file are integers.
 
-        //LOOK AT PAGE 743 in the book for an example using the character data type. 
+        //LOOK AT PAGE 743 in the book for an example using the character data type.
 
 
         //NOTE ABOUT R and RW:
@@ -293,7 +293,7 @@ public class GFG {
         bw.close();
     }
 
-    public static void main(String[] args) throws Exception
+    public static void main(String[] args)
     {
         try {
             writeToFile();
