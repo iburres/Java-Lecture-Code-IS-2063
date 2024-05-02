@@ -12,8 +12,9 @@ public class HashMaps {
 
     public static void main(String[] args) {
 
-        // Create a new HashMap
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        // Create a new HashMap.  Notice that we specify the data types for the key and value, meaning they do not
+        // have to be the same data type.
+        HashMap<String, Integer> map = new HashMap<String, Integer>(); // Key: String, Value: Integer
 
         // Add key-value pairs to the HashMap
         map.put("Alice", 25);
