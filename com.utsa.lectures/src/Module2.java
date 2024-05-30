@@ -32,6 +32,10 @@ public class Module2 {
     //Every project can only have one main method.
     public static void main(String[] args) {
 
+        //character
+        char letter;
+        letter = 'c'; // stored using the single quotation mark
+
         // Declaring a method variable / local variable
         int num;
         double squared;
