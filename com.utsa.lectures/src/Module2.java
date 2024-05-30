@@ -23,6 +23,7 @@ public class Module2 {
     static String first_name = "Ian";  //You can change this to your name
     static String last_name;
 
+
     // instance variables.  Can be public or private
     public String school = " ";
     public String major = "Cyber Security";
