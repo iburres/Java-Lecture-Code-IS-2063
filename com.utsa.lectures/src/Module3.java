@@ -228,6 +228,9 @@ public class Module3 {
     // The toUpperCase method is used to convert a string to uppercase.
     // The trim method is used to remove leading and trailing spaces from a string.
     // The split method is used to split a string into substrings.
+    // The charAt() method is used to return the character at a specified index.
+    // isUpperCase() method is used to determine if a character is uppercase.
+    // isLowerCase() method is used to determine if a character is lowercase.
 
         //Example: The following code compares two strings using the equals method.
         String name1 = "John";
@@ -275,8 +278,20 @@ public class Module3 {
             System.out.println("The name does not end with hn.");
         }
 
+        // Example 6: The following code determines if a character is uppercase or lowercase.
+        char letter = 'A';
+        if (Character.isUpperCase(letter)) {
+            System.out.println("The letter is uppercase.");
+        }
+        else {
+            System.out.println("The letter is lowercase.");
+        }
+
         // End of Module 3
         // Please read Chapter 3 in the textbook and attempt some of the challenges at the end of the chapter.
+
+        // HINT:  You may need to use charAt() method to grab the index of the character in the JOptionPane showInputDialog,
+        // which would be at index 0.  Remember, the charAt() method returns a character at a specified index.
 
     }
 }
