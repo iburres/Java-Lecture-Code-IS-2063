@@ -35,7 +35,7 @@ public class Module2 {
 
         //character
         char letter;
-        letter = 'c'; // stored using the single quotation mark
+        letter = 'c'; // stored sing the single quotation mark
 
         // Declaring a method variable / local variable
         int num;
@@ -48,7 +48,7 @@ public class Module2 {
 
         // Simple print statement. Notice that you cannot use the non-static instance variables
         // here
-        System.out.println("Hello " + first_name);
+        System.out.println("Hello" + first_name);
 
         // The left side of the argument for pow() method is the number, the right is what power
         // we want to raise the number by.  2^3 below.

@@ -14,11 +14,12 @@ public class Module6 { // The public class name must match the file name. We can
     public static void main(String[] args) throws IOException { // throws IOException is used to handle input/output errors
 
         // We can use the printHello method from Module5 class
-        // Module5.printHello();
-        //Menu.displayMenu();
-        //System.exit(0);
+         Module5.printHello();
+         Menu.displayMenu();
+         System.exit(0);
 
-        Truck myTruck = new Truck("red", 0, "Ford", "F-150", 6.5, 10000, 2.5, "crew", "000000000");
+        Truck myTruck = new Truck("red", 0, "Ford", "F-150", 6.5,
+                10000, 2.5, "crew", "000000000");
         myTruck.setTruckSpeed();
     }
 }
@@ -81,6 +82,8 @@ class Car {
     // Static fields. Because they are static, they belong to the class and not to the object. Technically, this is
     // not good practice. In fact, it violates the principles of object-oriented programming (OOP). Also, Static variables
     // do not get stored in the heap or on the stack. Instead, they are stored in the data segment of the program's memory.
+    // Static variables use shared-memory allocation, which makes them useful for global state and for shared functionality.
+    // To put it simply, static variables are global variables.
     static String color;
     static int speed;
     static String make;
@@ -88,7 +91,7 @@ class Car {
     static boolean isOn;
 
     // non-static fields. Because they are non-static, they belong to the object and not to the class. This is the
-    // correct way to declare fields. Non-static variables belong are stored in the object memory. I will show you
+    // correct way to declare fields. Non-static variables are stored in the object's memory. I will show you
     // how to access the memory of an object during class lecture.
     private String vin; // vin means vehicle identification number
 
@@ -123,7 +126,7 @@ class Car {
         make = newMake;
         model = newModel;
         isOn = newIsOn;
-        vin = newVin;
+        this.vin = newVin;
     }
 
     // This is not a static method. It is an instance method. It belongs to the object and not to the class. This is

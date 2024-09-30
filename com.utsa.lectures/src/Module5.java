@@ -31,6 +31,8 @@ public class Module5 {
                                                // to use all capital letters for final variables as they are constants.
     int new_variable = 5;
 
+    private int myvariable2 = 45;
+
     // This is the main method that is the entry point to our program. Every class must have a main method and can only
     // have one main method.  This is where the program starts running.  We can call other methods from the main method.
     public static void main(String[] args) {
@@ -47,6 +49,8 @@ public class Module5 {
         // create an instance of the class to call the printHello2 method.
         Module5 myModule5 = new Module5();
         myModule5.printHello2();
+
+
 
         // Example of calling on overloaded method
         myModule5.printHello2("John"); // we can call the overloaded method with a parameter.
@@ -100,6 +104,9 @@ public class Module5 {
     public static void printSum(double number1, double number2) {
 
         System.out.println(number1 + number2);
+        int num = 5;
+        multiplyByTwo(num);
+
     }
 
     // A public method that takes a parameter of type integer and returns the value multiplied by 2

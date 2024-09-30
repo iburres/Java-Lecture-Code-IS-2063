@@ -12,7 +12,7 @@ public class Module3 {
     public static void main(String[] args) {
 
         // if statement
-        int x = 5; // declare and initialize variable x
+        int x = 10; // declare and initialize variable x
         int y = 10; // declare and initialize variable y
 
         if (x < y) {  // evaluate the expression x < y.  If the expression is true, then execute the code in the
@@ -24,7 +24,8 @@ public class Module3 {
         // if-else statement
         if (x > y) {
             System.out.println("x is greater than y");
-        } else {
+        }
+        else {
             System.out.println("x is less than or equal to y");
         }
 
@@ -38,8 +39,9 @@ public class Module3 {
             System.out.println("x is equal to y");
         } // else statement is optional.  Also, only one else statement is allowed per if statement.
 
-        // nested if statement
+        // nested if s+tatement
         if (x > 0) {
+            System.out.println("This is true so I execute");
             if (x < 10) {
                 System.out.println("x is a positive single digit number.");
             } // can have as many nested if statements as needed, though the rule of thumb is to not have more than 3.
@@ -161,13 +163,13 @@ public class Module3 {
 
 
         // Displaying formatted output with System.out.printf and String.format
-        double num1 = 1.23456789; // Remember that double is a floating point number with 15 decimal
+        double num1 = 1.23556789; // Remember that double is a floating point number with 15 decimal
                                   // digits of precision.
         System.out.printf("num1 = %.2f\n", num1); // displays num1 with 2 decimal places. Takes the form of
                                                   // printf("format string", ArgumentList);
 
         int hours = 35;
-        System.out.printf("I worked %d hours this week.\n", hours); // displays hours as an integer.
+        System.out.printf("I worked %d hours %f this week.\n", hours, num1); // displays hours as an integer.
                                                                     // %d is a format specifier for integers.
         String name = "John";
         System.out.printf("My name is %s.\n", name); // displays name as a string. %s is a format specifier for strings.
@@ -181,6 +183,8 @@ public class Module3 {
         // %b - boolean
         // %n - new line
         // %% - percent sign
+
+        //0x0000CDFEEEEE    0 -9  A - F
 
         // The general syntax for writing a format specifier is %[flags][width][.precision]conversion-character
         // The width specifier specifies the minimum number of spaces to be written as output.
@@ -210,6 +214,13 @@ public class Module3 {
                                                                     // dialog box on the screen.
                                                                     // The output variable is the message to be displayed.
 
+    // To ensure the floating point value does not use rounding when using the format specifier %.2f, use the BigDecimal
+    // class or use floor or ceil methods from the Math class.
+        double non_rounding = Math.floor(num2 * 1000) / 1000.0;
+        System.out.printf("%.3f\n", non_rounding);  // This won't work with JOptionPane.showMessageDialog()
+
+
+
 
     // String comparisons
     // The equals method is used to compare the contents of two strings.
@@ -217,6 +228,7 @@ public class Module3 {
     // The compareToIgnoreCase method is used to compare the contents of two strings, ignoring case.
     // The startsWith method is used to determine if a string starts with a specified substring.
     // The endsWith method is used to determine if a string ends with a specified substring.
+        // contains method is used to find a substring within a string.
     // The equalsIgnoreCase method is used to compare the contents of two strings, ignoring case.
     // The regionMatches method is used to compare a specified portion of one string with another string.
     // The indexOf method is used to determine the index of a specified substring within a string.
@@ -269,6 +281,12 @@ public class Module3 {
             System.out.println("The name does not start with Jo.");
         }
 
+        if (name7.contains("oh")) {
+            System.out.println("The name contains oh.");
+        }
+        else {
+            System.out.println("The name does not contain oh.");
+        }
         //Example 5: The following code determines if a string ends with a specified substring.
         String name8 = "John";
         if (name8.endsWith("hn")) {

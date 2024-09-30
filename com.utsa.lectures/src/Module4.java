@@ -138,7 +138,7 @@ public class Module4 {
 
         // If you do not include the try-catch block, you will get an error. This is because the FileWriter and PrintWriter
         // classes can throw an exception if the file does not exist, or if you do not have permission to write to the file.
-        // So ignore the book in this case, and include the try-catch block.
+        // So ignore the book in this case,5 and include the try-catch block.
         try { // you will get an error if the file does not exist, or if you do not have permission to write to the file
             FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output.txt");
             PrintWriter printWriter = new PrintWriter(fileWriter);
