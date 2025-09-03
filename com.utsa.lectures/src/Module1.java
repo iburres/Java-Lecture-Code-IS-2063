@@ -12,18 +12,13 @@ public class Module1 {
 
     public static void main(String[] args) {
 
-        String name = "";
 
-        //System.out.print("Hello World");
+        System.out.print("Hello World");
+        JOptionPane.showMessageDialog(null, "Hello World");
 
-        //JOptionPane.showMessageDialog(null,"Please enter your name");
-        name = JOptionPane.showInputDialog("Please enter your name: ");
-        JOptionPane.showMessageDialog(null, "Hello " + name + ", welcome to IS-2063");
-        System.exit(0);
     }
 
 }
-
 
 
 

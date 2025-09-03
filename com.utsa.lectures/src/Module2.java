@@ -33,6 +33,7 @@ public class Module2 {
     //Every project can only have one main method.
     public static void main(String[] args) {
 
+
         //character
         char letter;
         letter = 'c'; // stored sing the single quotation mark
@@ -70,7 +71,6 @@ public class Module2 {
         // or doubles or strings, etc... and store them into a primitive variable of the proper
         // data type
         int result = keyboard.nextInt();
-
         int total = 5;
         System.out.println("The two numbers added = " + (total + result));
                             // notice how + adds the integer values here with the ( ), but
@@ -119,4 +119,5 @@ public class Module2 {
 
         System.exit(0);
     }
+
 }
