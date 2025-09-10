@@ -9,11 +9,13 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileReader;
 
+
 public class Module4 {
 
     public static void main(String[] args) {
         // For loop, standard syntax: for (initialization; condition; increment/decrement)
-        for (int i = 0; i < 5; i++) { // notice the semicolon and initialization for our control variable, i
+        for (int i = 0; i < 5; ++i) { // notice the semicolon and initialization for our control variable, i
+            System.out.println(i + i);
             System.out.println("i = " + i);
 
             // Nested for loop
@@ -39,6 +41,13 @@ public class Module4 {
         System.out.println("x = " + x); // x = 1
         System.out.println("x++ = " + x++); // x++ = 1
         System.out.println("x = " + x); // x = 2
+        // The output of this code will be:
+        // x = 0
+        // ++x = 1 [This is because the pre-increment increments x before it is used.]
+        // x = 1 [This is because x was incremented in the previous line.]
+        // x++ = 1 [This is because the post-increment increments x after it is used, so it is still 1.]
+        // x = 2 [This is because x was incremented in the previous line, so it's now 1 + 1 = 2.]
+        // As you can see, the pre-increment increments x before it is used, while the post-increment increments x after it is used.
         // The difference between pre-increment and post-increment is when the increment occurs. Pre-increment will
         // increment the variable before it is used, while post-increment will increment the variable after it is used.
         // This can be useful in certain situations, but can also lead to confusion if not used properly.

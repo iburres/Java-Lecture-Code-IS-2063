@@ -5,6 +5,8 @@
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
+
+
 // Note: get used to using comments to explain your code.  It will make it easier for you and other programmers
 // to understand your code.
 public class Module3 {
@@ -24,8 +26,7 @@ public class Module3 {
         // if-else statement
         if (x > y) {
             System.out.println("x is greater than y");
-        }
-        else {
+        } else {
             System.out.println("x is less than or equal to y");
         }
 
@@ -40,7 +41,7 @@ public class Module3 {
         } // else statement is optional.  Also, only one else statement is allowed per if statement.
 
         // nested if s+tatement
-        if (x > 0) {
+        if (x < 10) {
             System.out.println("This is true so I execute");
             if (x < 10) {
                 System.out.println("x is a positive single digit number.");
@@ -239,10 +240,11 @@ public class Module3 {
     // The toLowerCase method is used to convert a string to lowercase.
     // The toUpperCase method is used to convert a string to uppercase.
     // The trim method is used to remove leading and trailing spaces from a string.
-    // The split method is used to split a string into substrings.
+    // The split method is used to split a string into substrings.                     I am on the rock
     // The charAt() method is used to return the character at a specified index.
     // isUpperCase() method is used to determine if a character is uppercase.
     // isLowerCase() method is used to determine if a character is lowercase.
+
 
         //Example: The following code compares two strings using the equals method.
         String name1 = "John";
