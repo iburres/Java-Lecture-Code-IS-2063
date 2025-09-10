@@ -159,7 +159,7 @@ public class Module4 {
             // using createNewFile() to create the file if it does not exist.  If the file already exists, it will not be
             // created again.  This is useful for preventing overwriting an existing file.
             if (fileWriter.createNewFile()) { // createNewFile() returns true if the file was created, false if it already exists
-                System.out.println("File created: " + fileWriter.toString());
+                System.out.println("File created: " + fileWriter);
             } else {
                 System.out.println("File already exists.");
             }
