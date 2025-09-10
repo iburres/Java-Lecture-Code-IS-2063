@@ -4,6 +4,7 @@
  */
 
 import javax.swing.*;
+import java.io.File; // new import statement for File class
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -133,6 +134,8 @@ public class Module4 {
         System.out.println("random = " + random);
         //Math.pow(2, 3); // 2^3 = 8
         //Math.sqrt(25); // square root of 25 = 5
+
+
         /*
             File I/O
             You can use the PrintWriter and FileWriter classes to write to a file, and the Scanner and FileReader classes
@@ -147,9 +150,19 @@ public class Module4 {
 
         // If you do not include the try-catch block, you will get an error. This is because the FileWriter and PrintWriter
         // classes can throw an exception if the file does not exist, or if you do not have permission to write to the file.
-        // So ignore the book in this case,5 and include the try-catch block.
+        // So ignore the book in this case and include the try-catch block.
         try { // you will get an error if the file does not exist, or if you do not have permission to write to the file
-            FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output.txt");
+            File fileWriter = new File("C:\\Users\\iburr\\OneDrive\\Desktop\\output.txt"); // using File class to create
+            // a file object.  Notice the double backslashes in the file path.  This is because a single backslash is an escape
+            // character in Java, so we need to use a double backslash to represent a single backslash in a file path.
+
+            // using createNewFile() to create the file if it does not exist.  If the file already exists, it will not be
+            // created again.  This is useful for preventing overwriting an existing file.
+            if (fileWriter.createNewFile()) { // createNewFile() returns true if the file was created, false if it already exists
+                System.out.println("File created: " + fileWriter.toString());
+            } else {
+                System.out.println("File already exists.");
+            }
             PrintWriter printWriter = new PrintWriter(fileWriter);
             printWriter.println("Name: " + name);
             printWriter.println("Age: " + age);
@@ -164,7 +177,7 @@ public class Module4 {
 
         // open a file using Scanner and FileReader
         try {
-            FileReader fileReader = new FileReader("/Users/burres/Desktop/output.txt");
+            FileReader fileReader = new FileReader("C:\\Users\\iburr\\OneDrive\\Desktop\\output.txt");
             Scanner fileScanner = new Scanner(fileReader);
             while (fileScanner.hasNextLine()) {
                 System.out.println(fileScanner.nextLine());
@@ -178,26 +191,26 @@ public class Module4 {
         try {  // java.awt is a package that contains classes for creating GUIs. Desktop is a class that allows you to
             // open files using the default application for that file type.  In this case, we are opening a text file.
             // getDesktop() returns the desktop object, and open() opens the file.
-            java.awt.Desktop.getDesktop().open(new java.io.File("/Users/burres/Desktop/output.txt"));
+            java.awt.Desktop.getDesktop().open(new java.io.File("C:\\users\\iburr\\desktop\\output.txt"));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
 
         // create a file using the GUI, write to the file, then open the file and its contents using the GUI.
         try {
-            FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output2.txt");
+            FileWriter fileWriter = new FileWriter("C:\\Users\\iburr\\OneDrive\\Desktop\\output2.txt");
             PrintWriter printWriter = new PrintWriter(fileWriter);
             String text = JOptionPane.showInputDialog(null, "Enter some text here: ");
             printWriter.println(text);
             printWriter.close();
-            java.awt.Desktop.getDesktop().open(new java.io.File("/Users/burres/Desktop/output2.txt"));
+            java.awt.Desktop.getDesktop().open(new java.io.File("C:\\Users\\iburr\\OneDrive\\Desktop\\output2.txt"));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
 
         // create a file using the GUI and write multiple lines to the file
         try {
-            FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output3.txt");
+            FileWriter fileWriter = new FileWriter("C:\\Users\\iburr\\OneDrive\\Desktop\\output3.txt");
             PrintWriter printWriter = new PrintWriter(fileWriter);
             String text;
             do { // use a do-while loop to write multiple lines to the file, and allow at least one line to be written
@@ -209,21 +222,21 @@ public class Module4 {
             } while (text != null); // null means the user pressed cancel. If the user did not press cancel, text will
             // not be null, so the loop will continue to run.
             printWriter.close();
-            java.awt.Desktop.getDesktop().open(new java.io.File("/Users/burres/Desktop/output3.txt"));
+            java.awt.Desktop.getDesktop().open(new java.io.File("C:\\Users\\iburr\\OneDrive\\Desktop\\output3.txt"));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage()); // e.getMessage() returns a string that describes the error
         }
         
         // writing formatted strings to a file
         try {
-            FileWriter fileWriter = new FileWriter("/Users/burres/Desktop/output4.txt");
+            FileWriter fileWriter = new FileWriter("C:\\Users\\iburr\\OneDrive\\Desktop\\output4.txt");
             PrintWriter printWriter = new PrintWriter(fileWriter);
             printWriter.printf("Name: %s\n", name); // %s is a placeholder for a string. FileWriter cannot write formatted
             // strings, so we use PrintWriter to write formatted strings to a file.
             printWriter.printf("Age: %s\n", age); // %s is a placeholder for a string
             printWriter.printf("Height: %d\n", height); // %d is a placeholder for an integer
             printWriter.close();
-            java.awt.Desktop.getDesktop().open(new java.io.File("/Users/burres/Desktop/output4.txt"));
+            java.awt.Desktop.getDesktop().open(new java.io.File("C:\\Users\\iburr\\OneDrive\\Desktop\\output4.txt"));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
