@@ -142,7 +142,7 @@ public class Module4 {
             to read from a file.
          */
 
-        // PrintWriter and FileWriter
+        // PrintWriter and FileWriter and File classes
         // create a new file using PrintWriter and FileWriter
         String name = "Jeff";
         String age = "30"; // we can write any type of data to a file
@@ -191,7 +191,7 @@ public class Module4 {
         try {  // java.awt is a package that contains classes for creating GUIs. Desktop is a class that allows you to
             // open files using the default application for that file type.  In this case, we are opening a text file.
             // getDesktop() returns the desktop object, and open() opens the file.
-            java.awt.Desktop.getDesktop().open(new java.io.File("C:\\users\\iburr\\desktop\\output.txt"));
+            java.awt.Desktop.getDesktop().open(new java.io.File("C:\\users\\iburr\\OneDrive\\desktop\\output.txt"));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
