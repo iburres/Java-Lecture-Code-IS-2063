@@ -31,8 +31,6 @@ public class Module5 {
                                                // to use all capital letters for final variables as they are constants.
     int new_variable = 5;
 
-    private int myvariable2 = 45;
-
     // This is the main method that is the entry point to our program. Every class must have a main method and can only
     // have one main method.  This is where the program starts running.  We can call other methods from the main method.
     public static void main(String[] args) {
@@ -104,8 +102,9 @@ public class Module5 {
     public static void printSum(double number1, double number2) {
 
         System.out.println(number1 + number2);
-        int num = 5;
-        multiplyByTwo(num);
+        int num = 0;
+        num = multiplyByTwo(num);
+        System.out.println(num);
 
     }
 
@@ -189,6 +188,9 @@ class Module5_2 {
         Module5 myModule5 = new Module5();
         myModule5.printHello2(); // printHello2 does not have the static keyword, so we need to create an instance of
                                  // the class to call it.
+
+        Module5 myMod5 = new Module5();
+
 
         Module5.printSum(5.5, 6.5);  // We can call the public method from the other class, since it is public.
 

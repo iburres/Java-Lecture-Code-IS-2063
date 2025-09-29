@@ -22,6 +22,12 @@ public class Module7 {
         twoDimensionalArray();
         sendArrayToMethod();
 
+        // We have to do this because the findIndexInString2() method is NOT static.
+        Module7 array = new Module7();
+        array.findIndexInString2();
+
+        System.out.println("\nThe index of the letter r in the array is: " + array.findIndexInString2());
+
         result = returnArray();
         for (int i = 0; i < result.length; i++) {
             System.out.println("\nElement " + i + ", in the returnArray has a value of:  " + result[i]);
@@ -174,6 +180,11 @@ public class Module7 {
         int index = myString.indexOf('W'); // the indexOf method returns the index of the first occurrence of the character
         System.out.println("\nThe index of the character 'W' is " + index);
         System.out.println("\n");
+    }
+
+    public Integer findIndexInString2(){
+        String myString = "Hello World";
+        return myString.indexOf('r');
     }
 
     // Assigning values to a two-dimensional array

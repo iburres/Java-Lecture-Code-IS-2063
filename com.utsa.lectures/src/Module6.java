@@ -18,9 +18,10 @@ public class Module6 { // The public class name must match the file name. We can
          Menu.displayMenu();
          System.exit(0);
 
-        Truck myTruck = new Truck("red", 0, "Ford", "F-150", 6.5,
-                10000, 2.5, "crew", "000000000");
-        myTruck.setTruckSpeed();
+        //Truck myTruck = new Truck("red", 0, "Ford", "F-150", 6.5,
+         //       10000, 2.5, "crew", "000000000");
+        //myTruck.setTruckSpeed();
+        Truck myTruck = new Truck();
     }
 }
 
@@ -195,7 +196,7 @@ class Truck {
     public String cabSize;
     private String vin;
 
-
+    /*
     public Truck(String newColor, int newSpeed, String newMake, String newModel, double newBedLength,
                  double newTowingCapacity, double newWeightInTons, String newCabSize, String newVin) {
         // This is the constructor method. It is used to create objects of the class. It is called when the new keyword
@@ -211,7 +212,7 @@ class Truck {
         cabSize = newCabSize;
         vin = newVin;
     }
-
+*/
 
 
     //Truck myTruck = new Truck("red", 0, "Ford", "F-150", 6.5, 10000, 2.5, "crew", "000000000");
