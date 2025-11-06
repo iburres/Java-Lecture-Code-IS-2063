@@ -10,19 +10,20 @@ import java.util.ArrayList;
 public class Module7 {
 
     public static void main(String[] args) {
-        int[] result;
+        //int[] result = {10, 100, 90, 80, 44, 55, 11, 3, 7, 16};
 
-        createArrays();  // Remember, if the createArrays method is not static, you will need to create an instance of
+        //createArrays();  // Remember, if the createArrays method is not static, you will need to create an instance of
         // the class to call the method.
-        appendElement();
-        orderingArrays();
-        accessingElements();
-        findIndex();
-        findIndexInString();
-        twoDimensionalArray();
+        //appendElement();
+        //orderingArrays();
+        //accessingElements();
+        //findIndex();
+        //findIndexInString();
+        //twoDimensionalArray();
         sendArrayToMethod();
 
         // We have to do this because the findIndexInString2() method is NOT static.
+        /*
         Module7 array = new Module7();
         array.findIndexInString2();
 
@@ -34,7 +35,7 @@ public class Module7 {
         }
         areArraysEqual();
         arrayList();
-
+*/
     }
 
     public static void createArrays() {
@@ -54,7 +55,7 @@ public class Module7 {
         myCharArray[0] = 'H'; // This is the first element in the array
         myCharArray[1] = 'e'; // This is the second element in the array, etc....
 
-        char[] newCharArray = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'}; // This is another way to create an array
+        char[] newCharArray = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!',}; // This is another way to create an array
 
         // We can use loops to fill the array with values
         int[] myNewArray = new int[10];
@@ -106,7 +107,8 @@ public class Module7 {
         System.out.println("\n\nOrdering Arrays:");
 
         // We can use the sort method to order the elements in an array
-        int[] myIntArray = new int[5];
+        int testScores = 5;
+        int[] myIntArray = new int[testScores];
         myIntArray[0] = 90;
         myIntArray[1] = 27;
         myIntArray[2] = 30;
@@ -150,6 +152,10 @@ public class Module7 {
 
         int[] people = {1, 2};
         System.out.println(people[1]);
+        System.out.println(students[4]);
+
+        students[4] = -122;
+        System.out.println(students[4]);
 
     }
 
@@ -237,11 +243,12 @@ public class Module7 {
         String[] myStringArray = new String[1];
         myStringArray[0] = "This Array is being sent to a method.";
 
-        char[] myCharArray = new char[1];
+        char[] myCharArray = new char[2];
         myCharArray[0] = 'T';
 
         System.out.println("\n\nSending the array to a method:");
-        receiveArray(myIntArray, myDoubleArray, myStringArray,myCharArray); // we must pass the exact amount of arguments that the method is expecting. If we
+        receiveArray(myIntArray, myDoubleArray, myStringArray,myCharArray); // we must pass the exact amount of
+        // arguments that the method is expecting. If we
         // don't, we will get a compile-time error.
 
     }

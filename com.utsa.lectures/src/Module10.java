@@ -187,8 +187,10 @@ class Module10_2 extends Module10_1 {
         return numMissed;
     }
 
-
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
 
 // because this does not extend another class, Java will automatically extend the Object class.  Eventually, all classes
@@ -213,14 +215,20 @@ class Module10_4{
         tests[0].setScore(95);
 
         // instanceof operator is used to determine if an object is an instance of a particular class
-        if (tests[0] instanceof Module10_1) {
+        if (tests[0] instanceof Module10_0) {
             System.out.println("This is a Module10_1 object");
         }
-
+        else{
+            System.out.println("This is NOT a Module10_1 object");
+        }
 
     }
 
 }
+
+/**
+ * Abstract Classes and Methods, and Interfaces
+ */
 
 // An abstract class is a class that is declared abstract —it may or may not include abstract methods.
 // Abstract classes cannot be instantiated, but they can be subclassed. When an abstract class is subclassed, the
@@ -252,9 +260,9 @@ abstract class Module10_5 extends Module10_0{
 // An interface is used to group related methods with empty bodies.  It is a blueprint of a class.
 interface Module10_6 {
 
-    public void doSomething(); // This is an abstract method, so it does not have a body
+    void doSomething(); // This is an abstract method, so it does not have a body
 
-    public void doSomethingElse(); // This is an abstract method, so it does not have a body
+    void doSomethingElse(); // This is an abstract method, so it does not have a body
 
 }
 

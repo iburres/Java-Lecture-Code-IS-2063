@@ -44,6 +44,7 @@ public class Module11 {
             System.out.println("File not found");
         }
 
+
         // some more types of exceptions:
         // ArithmeticException
         // NullPointerException
@@ -98,6 +99,7 @@ public class Module11 {
             int num = 5;
             if (num < 10) {
                 throw new Exception("Number is less than 10");
+                //System.out.println("The number is less than 10");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());

@@ -76,7 +76,7 @@ public class Module9 {
         System.out.println("iObj " + iObj + " is now the same as iObj2: " + iObj2);
 
         // Unboxing, converting an object to a primitive data type
-        // Integer iObj3 = new Integer(10); Integer has been deprecated.
+        // Integer iObj3 = new Integer(10); //Integer has been deprecated.
         // int i2 = iObj3.intValue(); // converting Integer to int explicitly
         // int i3 = iObj3; // converting Integer to int implicitly
     }
@@ -192,7 +192,6 @@ public class Module9 {
     // split Method, splits a string into an array of substrings
     public static void split(){
         System.out.println("\n  *******  split Method:  *******");
-
         String s1 = "Hello, World";
         String[] words = s1.split(","); // splits the string into two substrings, Hello and World
         for (String word : words){ // the : is the enhanced for loop, which is used to iterate through an array. It can

@@ -35,8 +35,9 @@ public class Module8 {
     enum Suits {Hearts, Diamonds, Clubs, Spades}
     enum Ranks {Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
 
+    enum Months {January, February, March, April, May, June, July, August, September, October, November,  December}
 
-
+    enum Ford {Mustang, Escort, F150}
     // creating a field
     private int x;
     private int y;
@@ -56,18 +57,34 @@ public class Module8 {
     // Constructor that demonstrates the use of the "this" keyword to call another constructor
     public Module8(int x) {
 
-        this(x, 0);
+        this(x, 0); // this calls the constructor that takes two parameters
     }
 
 
 
     // Copy Constructor
+    // A constructor that takes an object of the same class as a parameter and copies its fields.
+    // Shallow copy, because we are just copying the values of the fields. If we want a deep copy, we need to
+    // create new objects for the fields that are objects.
     public Module8(Module8 newModule) {
         x = newModule.x;
         y = newModule.y;
     }
 
     public static void main(String[] args) {
+
+        // Accessing the enum constants
+        System.out.println(Suits.Hearts);
+
+        // Using the ordinal value
+        Suits card_1 =  Suits.Hearts;
+        System.out.println(card_1.ordinal());
+
+        // Using compareTo method
+        if (card_1.Diamonds.compareTo(Suits.Hearts) > 0) {
+
+            System.out.println(card_1.Diamonds + " is greater than " + Suits.Hearts);
+        }
 
         // Passing objects as arguments to methods
         Module8 mymodule = new Module8();
@@ -147,7 +164,8 @@ public class Module8 {
     // toString method
     @Override
     public String toString() {
-        return "The value of x is: " + x + y;
+
+        return "The value of x is: " + x + " and the value of y is: " + y;
     }
 
     // If we write the equals method, we will be overriding the equals method of the Object class, just as we
@@ -162,7 +180,11 @@ public class Module8 {
         return status;
     }
 
-    // Method to make a copy of an object
+    // Method to make a copy of an object.   Note that we cannot just copy an object by using the assignment operator,
+    // because that will just create a reference to the same object, not a copy of the object. For instance,
+    // Module8 newObject = new Module8(15, 3);
+    // Module8 newObject_2 = newObject;
+    // All this does is assign the address of newObject to newObject_2
     public Module8 copy() {
         Module8 copyObject = new Module8(x, y); // this requires a constructor that takes two parameters. As such,
         // we also need a no-argument constructor for the other objects we created that did not take any arguments.
