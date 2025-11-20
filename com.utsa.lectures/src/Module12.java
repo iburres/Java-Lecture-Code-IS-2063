@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 import javax.swing.JOptionPane;
 
-public class HashMaps {
+public class Module12 {
 
 
     // Table of HashMap methods
