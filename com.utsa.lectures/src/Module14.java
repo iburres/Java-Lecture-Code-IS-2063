@@ -57,6 +57,7 @@ public class Module14 {
             System.out.println("For instance, using interface-based programming can help reduce the attack surface of an application by limiting direct access to implementation classes.");
             System.out.println();
         }
+
     }
 
     // Example of the Log4j vulnerability (CVE-2021-44228)

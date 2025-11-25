@@ -146,7 +146,7 @@ public class Module13 {
     public static boolean isValidPassword(String password) {
         // Regex pattern to ensure password has at least 8 characters, one uppercase letter,
         // one lowercase letter, one digit, and one special character
-        String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"; // Ba9!dManaJama99
+        String regex = "^(?=.*?<lower>[a-z])(?=.*?<Upper>[A-Z])(?=.*?<digits>\\d)(?=.*?<special>[@$!%*?&]).{8,}$"; // BadManaJama99!
         return password.matches(regex);
     }
 
