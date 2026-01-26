@@ -27,6 +27,8 @@ public class Module2 {
     // instance variables.  Can be public or private
     public String school = " ";
     public String major = "Cyber Security";
+    String year = "Freshman"; // default access modifier
+    private int age = 18; // private access modifier
 
     //another method
 
