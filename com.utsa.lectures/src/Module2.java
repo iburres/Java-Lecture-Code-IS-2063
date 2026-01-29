@@ -28,7 +28,8 @@ public class Module2 {
     public String school = " ";
     public String major = "Cyber Security";
     String year = "Freshman"; // default access modifier
-    private int age = 18; // private access modifier
+    public int age = 18; // private access modifier
+    static int age_2 = 99;
 
     //another method
 
@@ -41,7 +42,7 @@ public class Module2 {
         letter = 'c'; // stored sing the single quotation mark
 
         // Declaring a method variable / local variable
-        int num;
+        int num, num2, num3;
         double squared;
         // initializing a method variable / local variable
         num = 6;
@@ -51,7 +52,7 @@ public class Module2 {
 
         // Simple print statement. Notice that you cannot use the non-static instance variables
         // here
-        System.out.println("Hello" + first_name);
+        System.out.println("Hello, " + age_2);
 
         // The left side of the argument for pow() method is the number, the right is what power
         // we want to raise the number by.  2^3 below.
@@ -120,6 +121,8 @@ public class Module2 {
         // with double.
 
         System.exit(0);
+
+
     }
 
 }
