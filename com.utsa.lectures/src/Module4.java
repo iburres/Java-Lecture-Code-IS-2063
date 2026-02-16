@@ -243,7 +243,7 @@ public class Module4 {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-        
+
         // using the Files and Paths classes to write to a file
         try {
             String content = "This is some text that we will write to a file using the Files and Paths classes.";
