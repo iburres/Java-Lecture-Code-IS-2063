@@ -9,6 +9,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileReader;
+import java.nio.file.Files; // new import statement for Files class, which contains methods for working with files
+import java.nio.file.Paths; // new import statement for Paths class, which contains methods for working with file paths
+
 
 
 public class Module4 {
@@ -237,6 +240,17 @@ public class Module4 {
             printWriter.printf("Height: %d\n", height); // %d is a placeholder for an integer
             printWriter.close();
             java.awt.Desktop.getDesktop().open(new java.io.File("C:\\Users\\iburr\\OneDrive\\Desktop\\output4.txt"));
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        
+        // using the Files and Paths classes to write to a file
+        try {
+            String content = "This is some text that we will write to a file using the Files and Paths classes.";
+            Files.write(Paths.get("C:\\Users\\iburr\\OneDrive\\Desktop\\output5.txt"), content.getBytes()); // getBytes()
+                // converts the string to a byte array, which is required by the write() method.  The write() method
+            // writes the byte array
+            java.awt.Desktop.getDesktop().open(new java.io.File("C:\\Users\\iburr\\OneDrive\\Desktop\\output5.txt"));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
