@@ -72,6 +72,11 @@ class Menu {
         // class. Static fields are not true to the object-oriented programming paradigm. They are more like global
         // variables.
 
+        Car car3 = new Car("Green", 0, "Honda", "Civic", false, "987654321");
+
+        String car_color_2 = JOptionPane.showInputDialog(null, "Enter the color of the car: ");
+        Car car4 = new Car(car_color_2, 0, "Tesla", "Model 3", false, "111111111");
+
 
 
     }
@@ -98,6 +103,7 @@ class Car {
 
     // constructor method. This method is used to create objects of the class. It is called when the new keyword is used
     // to create an object. It is used to initialize the object's fields. It has the same name as the class and no return
+
 
     public Car() {
         // This is the default constructor. It is called when the new keyword is used to create an object of the class.
