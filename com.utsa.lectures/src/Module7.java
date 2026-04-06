@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Module7 {
 
     public static void main(String[] args) {
-        //int[] result = {10, 100, 90, 80, 44, 55, 11, 3, 7, 16};
+        int[] result = {10, 100, 90, 80, 44, 55, 11, 3, 7, 16}; // 0 -> N-1
 
         //createArrays();  // Remember, if the createArrays method is not static, you will need to create an instance of
         // the class to call the method.
@@ -20,7 +20,7 @@ public class Module7 {
         //findIndex();
         //findIndexInString();
         //twoDimensionalArray();
-        sendArrayToMethod();
+        //sendArrayToMethod();
 
         // We have to do this because the findIndexInString2() method is NOT static.
         /*
@@ -34,8 +34,11 @@ public class Module7 {
             System.out.println("\nElement " + i + ", in the returnArray has a value of:  " + result[i]);
         }
         areArraysEqual();
+
+         */
         arrayList();
-*/
+
+
     }
 
     public static void createArrays() {
@@ -310,7 +313,7 @@ public static void bubbleSort(int[] array) {
             for (int j = 1; j < (n - i); j++) {
                 if (array[j - 1] > array[j]) {
                     // swap elements below. Remember my example using the three cups?
-                    temp = array[j - 1];
+                    temp = array[j - 1];            // int a = 4;  int b = 6;   int temp = 0;  temp = a; a = b; b = temp;
                     array[j - 1] = array[j];
                     array[j] = temp;
                 }

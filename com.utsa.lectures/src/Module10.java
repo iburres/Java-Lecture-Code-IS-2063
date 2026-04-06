@@ -70,7 +70,7 @@ public class Module10 {
     }
 }
 
-// Assume Module 10 behaves like the GradedActivity class in the textbook
+// Assume Module 10_0 behaves like the GradedActivity class in the textbook
 class Module10_0 {
 
     private double score; // This field is private, so it is not accessible from outside the class even via inheritance.
@@ -106,7 +106,7 @@ class Module10_0 {
 
 }
 
-// Assume Module 10 behaves like the FinalExam class in the textbook. This class extends Module10_0 (GradedActivity)
+// Assume Module 10_1 behaves like the FinalExam class in the textbook. This class extends Module10_0 (GradedActivity)
 class Module10_1 extends Module10_0{
 
     private int numQuestions;
