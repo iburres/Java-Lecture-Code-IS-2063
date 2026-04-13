@@ -6,11 +6,9 @@
  */
 
 // Import the HashMap class from the java.util package
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import javax.swing.JOptionPane;
+import java.util.stream.Collectors;
 
 public class Module12 {
 
@@ -26,6 +24,15 @@ public class Module12 {
      * size()              Returns the number of key-value pairs in the HashMap
      * isEmpty()           Returns true if the HashMap is empty
      * clear()             Removes all key-value pairs from the HashMap
+     *
+     * HashMap<String, Integer> map = new HashMap<>();
+     * map.put("Alice", 30);
+     * map.put("bob", 25);
+     * map.put("Charlie", 35);
+     *
+     * map.size();
+     * map.remove("Charlie");
+     * map.size();
      */
     public static void main(String[] args) {
 
@@ -47,7 +54,8 @@ public class Module12 {
 
         // Try a for loop and/or using a built-in method.   keySet ?????   List = contains() method
         for  (String ignored : gradeBook.keySet()) {
-            System.out.println("Contains value 85: " + grade.contains(85));
+            System.out.println("Contains value 85: " + grade.contains(88));
+            // List.contains()
         }
 
 
@@ -134,6 +142,8 @@ public class Module12 {
 
         moreExamples();
         nestedHashMaps();
+        playingWithCollections();
+        streamAPI();
     }
 
     // More examples of Hashmaps
@@ -180,6 +190,48 @@ public class Module12 {
         for (String empId : employeeDetails.keySet()) {
             System.out.println("Employee ID: " + empId + ", Details: " + employeeDetails.get(empId));
         }
+    }
+
+    /* Collections.sort(list)
+    .reverse(list)
+    .shuffle(list)
+    .min(collection)
+    .max(collection)
+    .frequency(collection, obj)
+    .unmodifiableList(list)
+    .synchronizedList(list)
+
+
+    stream pipeline
+
+    Source - a collection (List or Map's entry set)
+    Intermediate Operations  - filter(predicate), map, sorted, distinct, limit
+    Terminal operations - forEach, collect, reduce, count, average (returns optional double), sum (on IntStream)
+
+    */
+
+    public static void playingWithCollections() {
+
+        List<Integer> grades = new ArrayList<>(List.of(85, 90, 78, 92, 70, 78));
+        Collections.sort(grades);
+        System.out.println("The grades are: " + grades);
+
+        System.out.println("Size of grades: " + grades.size());
+        System.out.println(Collections.min(grades));
+        System.out.println(Collections.max(grades));
+        System.out.println(Collections.frequency(grades, 78));
+    }
+
+    public static void streamAPI() {
+        HashMap<String, Double> studentGrades = new HashMap<>();
+        studentGrades.put("Emma", 89.5);
+        studentGrades.put("John", 92.0);
+        studentGrades.put("Sally", 85.0);
+
+        studentGrades.entrySet().stream().filter(entry -> entry.getValue() >= 88.0).forEach(entry ->
+                System.out.println(entry.getKey() + ": " + entry.getValue()));  // notice that Sally will not print
+
+
     }
 
 
